@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import config from "../config/config";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ const LoginPage = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        axios.post("http://localhost:8091/api/auth/signin", { username, password })
+        axios.post(`${config.API_BASE_URL}/api/auth/signin`, { username, password })
             .then((response) => {
                 const { token, id } = response.data;
                 sessionStorage.setItem("authToken", token);

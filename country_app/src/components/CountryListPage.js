@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CountryCard from "../components/CountryCard"; // Assuming you have the CountryCard component
+import config from "../config/config";
 
 const CountryListPage = () => {
     const [countries, setCountries] = useState([]);
@@ -34,7 +35,7 @@ const CountryListPage = () => {
 
         // Fetch user's favorite countries if logged in
         if (token && userId) {
-            axios.get(`http://localhost:8091/api/get/${userId}/favorites`, {
+            axios.get(`${config.API_BASE_URL}/api/get/${userId}/favorites`, {
                 headers: { Authorization: `Bearer ${token}` }
             }).then((res) => setFavorites(res.data));
         }
@@ -48,7 +49,7 @@ const CountryListPage = () => {
         }
 
         // Send the country code wrapped in an object
-        axios.post(`http://localhost:8091/api/post/${userId}/favorites`, { country: countryCode }, {
+        axios.post(`${config.API_BASE_URL}/api/post/${userId}/favorites`, { country: countryCode }, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(() => {
             setFavorites([...favorites, countryCode]);
@@ -64,7 +65,7 @@ const CountryListPage = () => {
         }
 
         // Send the country code wrapped in an object
-        axios.put(`http://localhost:8091/api/put/${userId}/favorites`, { country: countryCode }, {
+        axios.put(`${config.API_BASE_URL}/api/put/${userId}/favorites`, { country: countryCode }, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(() => {
             setFavorites(favorites.filter((code) => code !== countryCode));

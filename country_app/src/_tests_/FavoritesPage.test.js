@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import FavoritesPage from '../components/FavoritesPage';
 import axios from 'axios';
+import config from '../config/config';
 
 jest.mock('axios');
 
@@ -32,7 +33,7 @@ describe('FavoritesPage', () => {
 
         // Check if the country is removed from the favorites
         expect(axios.put).toHaveBeenCalledWith(
-            'http://localhost:8091/api/put/680723b0bb47220379e11c44/favorites',
+            `${config.API_BASE_URL}/api/put/680723b0bb47220379e11c44/favorites`,
             { country: 'US' },
             expect.anything()
         );

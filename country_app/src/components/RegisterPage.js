@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import config from "../config/config";
 const RegisterPage = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ const RegisterPage = () => {
     const handleRegister = (e) => {
         e.preventDefault();
 
-        axios.post("http://localhost:8091/api/auth/signup", { username, email, password })
+        axios.post(`${config.API_BASE_URL}/api/auth/signup`, { username, email, password })
             .then(() => navigate("/login"))
             .catch(() => setError("Failed to register. Please try again."));
     };
