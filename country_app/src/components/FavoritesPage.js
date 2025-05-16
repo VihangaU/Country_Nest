@@ -77,7 +77,7 @@ const FavoritesPage = () => {
         }
 
         // Send the country code wrapped in an object
-        axios.put(`${API_BASE_URL}/api/put/${userId}/favorites`, { country: countryCode }, {
+        axios.put(`${config.API_BASE_URL}/api/put/${userId}/favorites`, { country: countryCode }, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(() => {
             // Remove country from favorites list in state
