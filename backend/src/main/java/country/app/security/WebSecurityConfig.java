@@ -60,7 +60,7 @@ public class WebSecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(request -> {
                     CorsConfiguration configuration = new CorsConfiguration();
-                    configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://192.168.1.4:3000", "https://countrynest.dynac.space/"));
+                    configuration.setAllowedOrigins(List.of("http://localhost:3021", "http://192.168.1.4:3000", "https://countrynest.dynac.space/"));
                     configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     configuration.setAllowedHeaders(List.of("*"));
                     configuration.setAllowCredentials(true);
