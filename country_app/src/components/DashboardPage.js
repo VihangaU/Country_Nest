@@ -9,7 +9,7 @@ const DashboardPage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get("https://restcountries.com/v3.1/all")
+        axios.get("https://restcountries.com/v3.1/all?fields=name,population,area,flags,capital,region,languages,cca3")
             .then((res) => {
                 setCountries(res.data);
                 setLoading(false);

@@ -27,7 +27,7 @@ const CountryListPage = () => {
 
     useEffect(() => {
         // Fetch country data
-        axios.get("https://restcountries.com/v3.1/all")
+        axios.get("https://restcountries.com/v3.1/all?fields=name,population,area,flags,capital,region,languages,cca3,subregion")
             .then((res) => {
                 setCountries(res.data);
                 setFilteredCountries(res.data); // Initialize filtered countries
