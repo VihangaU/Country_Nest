@@ -80,3 +80,13 @@ npm run build
 Developed By *VihangaU*
 
 ---
+
+## Screenshots
+
+<img src="https://github.com/user-attachments/assets/4e96de90-40d3-42df-bff6-6fec397d75d3" width="500" />
+<img src="https://github.com/user-attachments/assets/da51ed5c-008a-4992-a18f-7e0360cdf402" width="500" />
+<img src="https://github.com/user-attachments/assets/0da79b9d-7e2c-4947-890c-4f2c6fdbbf75" width="500" />
+<img src="https://github.com/user-attachments/assets/b1557f0d-e89d-4b86-83e3-d9b1bfae15ba" width="500" />
+<img src="https://github.com/user-attachments/assets/645a321a-0e89-49ca-b028-5873c396a111" width="500" />
+
+---
